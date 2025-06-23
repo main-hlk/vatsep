@@ -1,0 +1,69 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #667eea, #764ba2);
+  margin: 0;
+  padding-top: 70px;
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+input, textarea, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background: #6a57e7;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.topnav {
+  background: #6a57e7;
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+}
+
+.topnav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.post-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post-card {
+  background: #f0f0ff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.post-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}

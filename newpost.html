@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yeni Gönderi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <a href="explore.html">Keşfet</a>
+    <a href="posts.html">Gönderiler</a>
+    <a href="newpost.html">Gönderi Paylaş</a>
+    <a href="profile.html">Profil</a>
+    <a href="#" id="logoutBtn">Çıkış</a>
+  </nav>
+  <div class="container">
+    <h1>Yeni Gönderi</h1>
+    <form id="postForm">
+      <textarea id="postText" placeholder="Ne paylaşmak istersin?" required></textarea>
+      <input type="file" id="postImage" accept="image/*">
+      <button type="submit">Paylaş</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const postForm = document.getElementById("postForm");
+      const postText = document.getElementById("postText");
+      const postImage = document.getElementById("postImage");
+      const email = localStorage.getItem("vatsep_logged_in");
+      if (!email) return window.location.href = "index.html";
+      const user = JSON.parse(localStorage.getItem("vatsep_user_" + email));
+
+      postForm.onsubmit = e => {
+        e.preventDefault();
+        const text = postText.value.trim();
+        const file = postImage.files[0];
+        const reader = new FileReader();
+
+        const savePost = (image = "") => {
+          const posts = JSON.parse(localStorage.getItem("vatsep_posts") || "[]");
+          posts.push({ username: user.username, text, image, date: new Date().toISOString() });
+          localStorage.setItem("vatsep_posts", JSON.stringify(posts));
+          alert("Gönderi paylaşıldı!");
+          window.location.href = "posts.html";
+        };
+
+        if (file) {
+          reader.onload = () => savePost(reader.result);
+          reader.readAsDataURL(file);
+        } else {
+          savePost();
+        }
+      };
+    });
+  </script>
+</body>
+</html>

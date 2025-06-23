@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vatsep - Profil</title>
+<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+  <h1>Profilini Düzenle</h1>
+  <form id="profileForm">
+    <div class="photo-upload">
+      <img id="profilePhotoPreview" src="default-profile.png" alt="Profil Fotoğrafı" />
+      <input type="file" id="profilePhoto" accept="image/*" />
+    </div>
+    <input type="text" id="profileUsername" placeholder="Kullanıcı Adı" required />
+    <textarea id="profileBio" placeholder="Biyografi"></textarea>
+    <input type="text" id="profileInterests" placeholder="İlgi Alanları (virgülle ayır)" />
+    <button type="submit">Kaydet</button>
+  </form>
+
+  <hr />
+
+  <h2>Yeni Gönderi Paylaş</h2>
+  <form id="postForm">
+    <textarea id="postText" placeholder="Ne düşünüyorsun?" required></textarea>
+    <input type="file" id="postPhoto" accept="image/*" />
+    <button type="submit">Gönder</button>
+  </form>
+
+  <a href="explore.html">Keşfet</a>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
