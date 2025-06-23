@@ -1,0 +1,107 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f0f2f5;
+  margin: 0; padding: 0;
+  display: flex; justify-content: center; align-items: center;
+  min-height: 100vh;
+}
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90vw;
+  max-width: 420px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #222;
+}
+.form-container form {
+  display: none;
+  flex-direction: column;
+}
+.form-container form.active {
+  display: flex;
+}
+input, textarea, button {
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+input:focus, textarea:focus {
+  border-color: #3b82f6;
+}
+button {
+  background: #3b82f6;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:hover {
+  background: #2563eb;
+}
+.photo-upload {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.photo-upload img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3b82f6;
+  cursor: pointer;
+}
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+a {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  color: #3b82f6;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.explore-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+  gap: 1rem;
+}
+.explore-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.explore-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+.explore-card button {
+  background: #10b981;
+  margin-top: 0.5rem;
+}
+.explore-card button:hover {
+  background: #059669;
+}
